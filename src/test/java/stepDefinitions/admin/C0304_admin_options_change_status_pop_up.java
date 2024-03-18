@@ -55,6 +55,7 @@ public class C0304_admin_options_change_status_pop_up {
 		samain.user_dashboard_mouser_users_all_users_is_clicked();
 		saalluser.users_all_users_actions_options_3_dots_is_click();
 		saalluser.users_all_users_actions_option_change_status_is_click();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

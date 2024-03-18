@@ -28,12 +28,12 @@ Feature: Validate Super admin dashboard page functionality
     Then Verify that user should be clickable the copyrights details shield link from the super admin dashboard page
     Then Verify that user should be clickable the copyrights details iffort link from the super admin dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an main logo from Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     Then Verify that user click on the main logo that should be navigated to the super admin dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements from notification dropdown Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     When user is click on the notification dropdown from the super admin dashboard page
@@ -42,7 +42,7 @@ Feature: Validate Super admin dashboard page functionality
     Then Verify that user should get the view all notifications link top from the super admin dashboard page
     Then Verify that user should get the view all notifications link is clickable from the super admin dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements from profile dropdown Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     When user click on the main profile dropdown button from the super admin dashboard page
@@ -56,7 +56,7 @@ Feature: Validate Super admin dashboard page functionality
     Then Verify that user sign out dropdown item should be displayed in the profile dropdown from the super admin page
     Then Verify that user sign out dropdown item should be clickable in the profile dropdown from the super admin page
 
-  @Regressionsed
+  @Smoke
   Scenario: Validate that working of an tabs elements from Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     Then Verify that user is mouse hover on the lookups category button from the super admin home page
@@ -65,14 +65,14 @@ Feature: Validate Super admin dashboard page functionality
 		Then Verify that user is mouse hover on the lookups attributes button from the super admin home page
 
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an tabs elements from Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     Then Verify that user is able to mouse hover on the user all user button from the super admin home page
     Then Verify that user is able to mouse hover on the user partners button from the super admin home page
     Then Verify that user is able to mouse hover on the user costomers button from the super admin home page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an footer elements in Super admin dashboard page
     Given Verify that user is on the super admin dashboard page as expected page title "Shield - Dashboard"
     When user is at the footer and click on the shield link from the super admin dashboard page

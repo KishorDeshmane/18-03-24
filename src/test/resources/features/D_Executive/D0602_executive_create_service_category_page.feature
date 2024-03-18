@@ -1,7 +1,7 @@
 @Executive_create_service_category_page
 Feature: Validate executive create service category page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elemets is present with executive create service category page
     Given Verify that executive user is on lookups create service category page as expected page title is "Shield"
     Then Verify that create service category tilte text of the page should displayed in the executive create service category page

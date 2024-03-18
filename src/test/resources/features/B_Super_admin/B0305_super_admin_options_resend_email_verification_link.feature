@@ -4,7 +4,7 @@ Feature: Validate super admin all user action options resend email verification 
 
   @Smoke
   Scenario: Validate that working of an action options resend email verification link button with active super admin user
-    Given Verify that super_admin user is on the users all users actions options resend email verification link as expected page title "Shield - Dashboard" for resend email verification link
+    Given Verify that super_admin user is on the users all users actions options resend email verification link as expected page title "Shield - Users" for resend email verification link
   
   #Need to create any inactive user here / Or search inactive user / Seaerch make it inactive user
   

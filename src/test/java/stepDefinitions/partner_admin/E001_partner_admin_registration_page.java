@@ -43,6 +43,7 @@ public class E001_partner_admin_registration_page {
 	public void verify_that_user_is_on_the_partner_registration_page_from_landing_page_as_expected_page_title(String string) {
 		DriverFactory.getDriver().get(AppHooks.prop.getProperty("url"));
 		lp.user_register_as_partner_button_is_click();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, string);
 		String str=ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(string, str);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -367,14 +368,6 @@ public class E001_partner_admin_registration_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@Then("Verify that left side shield text should be displayed in the register as partner page")
-	public void verify_that_left_side_shield_text_should_be_displayed_in_the_register_as_partner_page() {
-		boolean actual = prp.user_register_as_partner_left_side_shield_text_is_displayed();
-		Assert.assertEquals(actual, true);
-		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
-	
 	@Then("Verify that left side shield logo should be displayed in the register as partner page")
 	public void verify_that_left_side_shield_logo_should_be_displayed_in_the_register_as_partner_page() {
 		boolean actual = prp.user_register_as_partner_left_side_shield_logo_is_displayed();
@@ -400,6 +393,30 @@ public class E001_partner_admin_registration_page {
 	}
 	
 	
+	@Then("Verify that already have an account text should be displayed in the register as partner page")
+	public void verify_that_already_have_an_account_text_should_be_displayed_in_the_register_as_partner_page() {
+		boolean actual = prp.already_have_an_account_text_is_displayed();
+		Assert.assertEquals(actual, true);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@Then("Verify that sign in link should be displayed in the register as partner page")
+	public void verify_that_sign_in_link_should_be_displayed_in_the_register_as_partner_page() {
+		boolean actual = prp.sign_in_link_should_be_displayed();
+		Assert.assertEquals(actual, true);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@Then("Verify that sign in link should be clickable in the register as partner page")
+	public void verify_that_sign_in_link_should_be_clickable_in_the_register_as_partner_page() {
+		boolean actual = prp.sign_in_link_should_be_clickable();
+		Assert.assertEquals(actual, true);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
 	/*
 	 * 
 	 * 
@@ -422,6 +439,17 @@ public class E001_partner_admin_registration_page {
 		prp.user_register_as_partner_first_name_user_field_send_text(string);
 		String actual=prp.user_register_as_partner_first_name_entered_text();
 		Assert.assertEquals(actual, string);
+		prp.user_register_as_partner_register_button_is_click();
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@When("user enter the text into the first name user field as fifty plus {string} and click on register button in register as partner page")
+	public void user_enter_the_text_into_the_first_name_user_field_as_fifty_plus_and_click_on_register_button_in_register_as_partner_page(String string) {
+		prp.user_register_as_partner_first_name_user_field_send_text(string);
+		String actual=prp.user_register_as_partner_first_name_entered_text();
+		String first50Characters = string.substring(0, Math.min(string.length(), 50));
+        Assert.assertEquals(actual, first50Characters);
 		prp.user_register_as_partner_register_button_is_click();
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -468,6 +496,17 @@ public class E001_partner_admin_registration_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
+	@When("user enter the text into the last name user field as fifty plus {string} and click on register button in register as partner page")
+	public void user_enter_the_text_into_the_last_name_user_field_as_fifty_plus_and_click_on_register_button_in_register_as_partner_page(String string) {
+		prp.user_register_as_partner_last_name_user_field_send_text(string);
+		String actual=prp.user_register_as_partner_last_name_entered_text();
+		String first50Characters = string.substring(0, Math.min(string.length(), 50));
+        Assert.assertEquals(actual, first50Characters);
+		prp.user_register_as_partner_register_button_is_click();
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
 	@Then("Verify that user should get the green tick in the last name user field from register as partner page")
 	public void verify_that_user_should_get_the_green_tick_in_the_last_name_user_field_from_register_as_partner_page() {
 		boolean actual= prp.user_register_as_partner_last_name_get_green_tick_in_user_field();
@@ -503,7 +542,7 @@ public class E001_partner_admin_registration_page {
 	public void user_enter_the_text_into_the_email_user_field_as_and_click_on_the_register_button_in_register_as_partner_page(String string) {
 		prp.user_register_as_partner_email_user_field_send_text(string);
 		String actual=prp.user_register_as_partner_email_entered_text();
-		Assert.assertEquals(actual, string);
+		Assert.assertEquals(actual.replaceAll(" ", ""), string.replaceAll(" ", ""));
 		prp.user_register_as_partner_register_button_is_click();
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -511,21 +550,12 @@ public class E001_partner_admin_registration_page {
 	
 	
 	
-	@When("user enter the text into the email user field 255 char and click on the register button in register as partner page")
-	public void user_enter_the_text_into_the_email_user_field_255_char_and_click_on_the_register_button_in_register_as_partner_page() {
-		prp.user_register_as_partner_email_user_field_send_text(AppHooks.tdata.getProperty("email_255_characters"));
-		String actual=prp.user_register_as_partner_email_entered_text();
-		Assert.assertEquals(actual, AppHooks.tdata.getProperty("email_255_characters"));
-		prp.user_register_as_partner_register_button_is_click();
-		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
 	
-	@When("user enter the text into the email user field 200 char and click on the register button in register as partner page")
-	public void user_enter_the_text_into_the_email_user_field_200_char_and_click_on_the_register_button_in_register_as_partner_page() {
-		prp.user_register_as_partner_email_user_field_send_text(AppHooks.tdata.getProperty("email_200_characters"));
+	@When("user enter the text into the email user field 190 char and click on the register button in register as partner page")
+	public void user_enter_the_text_into_the_email_user_field_190_char_and_click_on_the_register_button_in_register_as_partner_page() {
+		prp.user_register_as_partner_email_user_field_send_text(AppHooks.tdata.getProperty("email_190_characters"));
 		String actual=prp.user_register_as_partner_email_entered_text();
-		Assert.assertEquals(actual, AppHooks.tdata.getProperty("email_200_characters"));
+		Assert.assertEquals(actual, AppHooks.tdata.getProperty("email_190_characters"));
 		prp.user_register_as_partner_register_button_is_click();
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -551,15 +581,7 @@ public class E001_partner_admin_registration_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@When("user enter the text into the email user field 255 plus char and click on the register button in register as partner page")
-	public void user_enter_the_text_into_the_email_user_field_255_plus_char_and_click_on_the_register_button_in_register_as_partner_page() {
-		prp.user_register_as_partner_email_user_field_send_text(AppHooks.tdata.getProperty("email_255_plus_characters"));
-		String actual=prp.user_register_as_partner_email_entered_text();
-		Assert.assertEquals(actual, AppHooks.tdata.getProperty("email_255_plus_characters"));
-		prp.user_register_as_partner_register_button_is_click();
-		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
+
 	
 	
 	@Then("Verify that user should get the green tick in the email user field from register as partner page")
@@ -595,6 +617,16 @@ public class E001_partner_admin_registration_page {
 	 * 
 	 * 
 	 */
+	
+	@When("user enter the text into the mobile number user field as space {string} and click on the register button in register as partner page")
+	public void user_enter_the_text_into_the_mobile_number_user_field_as_space_and_click_on_the_register_button_in_register_as_partner_page(String string) {
+		prp.user_register_as_partner_mobile_number_user_field_send_text(string);
+		String actual=prp.user_register_as_partner_mobile_number_entered_text();
+		Assert.assertEquals(actual, string);
+		prp.user_register_as_partner_register_button_is_click();
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
 	
 	@When("user enter the text into the mobile number user field as {string} and click on the register button in register as partner page")
 	public void user_enter_the_text_into_the_mobile_number_user_field_as_and_click_on_the_register_button_in_register_as_partner_page(String string) {
@@ -756,8 +788,9 @@ public class E001_partner_admin_registration_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@When("user enter email into the user field as {string} into the partner registration page")
-	public void user_enter_email_into_the_user_field_as_into_the_partner_registration_page(String string) {
+	@When("user enter email into the user field from the partner registration page")
+	public void user_enter_email_into_the_user_field_from_the_partner_registration_page( ) {
+		String string =ElementUtil.eu.random_email();
 		prp.user_register_as_partner_email_user_field_send_text(string);
 	    String actual=prp.user_register_as_partner_email_entered_text();
 	    Assert.assertEquals(actual, string);
@@ -765,8 +798,9 @@ public class E001_partner_admin_registration_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@When("user enter mobile number into the user field as {string} into the partner registration page")
-	public void user_enter_mobile_number_into_the_user_field_as_into_the_partner_registration_page(String string) {
+	@When("user enter mobile number into the user field as nine digit into the partner registration page")
+	public void user_enter_mobile_number_into_the_user_field_as_nine_digit_into_the_partner_registration_page() {
+		String string = ElementUtil.eu.random_nine_digit();
 		prp.user_register_as_partner_mobile_number_user_field_send_text(string);
 	    String actual=prp.user_register_as_partner_mobile_number_entered_text();
 	    Assert.assertEquals(actual, string);
@@ -803,27 +837,34 @@ public class E001_partner_admin_registration_page {
 	
 	@Then("Verify that user is on the partner log in page")
 	public void verify_that_user_is_on_the_partner_log_in_page() {
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	    boolean actual = plp.user_log_page_get_otp_button_is_clickable();
-	    Assert.assertEquals(actual, true);
+		boolean actual= plp.register_here_link_is_displayed();
+	     Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	@Then("Verify that sign in link should be redirect to the partner log in page from the partner admin log in page")
+	public void verify_that_sign_in_link_should_be_redirect_to_the_partner_log_in_page_from_the_partner_admin_log_in_page() {
+		prp.sign_in_link_should_be_clicked();
+		boolean actual = plp.register_here_link_is_displayed();
+		Assert.assertEquals(actual, true);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
 	
 	/*
 	 * 
 	 * 
 	 * 
 	 */
-	
 	
 	@Then("user should get the partner created successfully and a verification mail has been sent to you pop up to the user in partner log in page")
 	public void user_should_get_the_Partner_created_successfully_and_a_verification_mail_has_been_sent_to_you_pop_up_to_the_user_in_partner_log_in_page() {

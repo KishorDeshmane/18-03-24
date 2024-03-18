@@ -1,7 +1,7 @@
 @Executive_partners_page
 Feature: Validate executive partners page functionality
 
-  @Regression
+  @Smoke
   Scenario:  Validate that elements are present with executive partners users page
   Given Verify that executive user is on the users partners user page as expected page title "Shield" 
 	Then Verify that executive user partner header text should be displayed in the executive partners users page

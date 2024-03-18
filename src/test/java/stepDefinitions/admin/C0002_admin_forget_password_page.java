@@ -2,7 +2,6 @@ package stepDefinitions.admin;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.applicationHooks.AppHooks;

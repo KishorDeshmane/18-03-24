@@ -1,295 +1,242 @@
-#@Partner_log_in_page
-#Feature: Validate partner log in and otp page
-#
-  #@Smoke
-  #Scenario: Validate that elements are present in the partner log in page
-    #Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		Then Verify that sign in to your account title text should be displayed in partner log in page
- #		Then Verify that sign in to manage your business text should be displayed in partner log in page
- #		Then Verify that left side shield title text should be displayed in partner log in page
- #		Then Verify that left side shield logo should be displayed in partner log in page
- #		Then Verify that left side sign in to your account text should be displayed in partner log in page
- #		Then Verify that left side sign in to manage your business text should be displayed in partner log in page
- #		Then Verify that sign in using email button should be displayed in partner log in page
- #		Then Verify that sign in using email button should be clickable in partner log in page
- #		Then Verify that sign in using email button should be able mouse hover in partner log in page
- #		Then Verify that sign in using email selected having email title text should be displayed in partner log in page
- #		Then Verify that sign in using email selected having email asterisk should be displayed in partner log in page
- #		Then Verify that sign in using email selected having email userfield should be displayed in partner log in page
- #		Then Verify that sign in using email selected having email userfield should be clickable in partner log in page
- #		Then Verify that sign in using email selected having email userfield placeholder value should be "Enter your email address" in partner log in page
- #		Then Verify that sign in using email selected having get otp button should be displayed in partner log in page
- #		Then Verify that sign in using email selected having get otp button should be clickable in partner log in page
- #		Then Verify that sign in using email selected having get otp button should be able mouse hover in partner log in page
- #		Then Verify that sign in using mobile button should be displayed in partner log in page
- #		Then Verify that sign in using mobile button should be clickable in partner log in page
- #		Then Verify that sign in using mobile button should be able mouse hover in partner log in page
- #		Then Verify that sign in using mobile selected having mobile number title text should be displayed in partner log in page
- #		Then Verify that sign in using mobile selected having mobile number asterisk should be displayed in partner log in page
- #		Then Verify that sign in using mobile dropdown should be displayed in partner log in page
- #		Then Verify that sign in using mobile dropdown user field should be clickable in partner log in page
- #		Then Verify that sign in using mobile dropdown list should be clickable in partner log in page
- #		Then Verify that sign in using mobile selected having mobile number userfield should be displayed in partner log in page
- #		Then Verify that sign in using mobile selected having mobile number userfield should be clickable in partner log in page
- #		Then Verify that sign in using mobile selected having mobile number userfield placeholder value should be "Enter your mobile number" in partner log in page
- #		Then Verify that sign in using mobile selected having get otp button should be displayed in partner log in page
- #		Then Verify that sign in using mobile selected having get otp button should be clickable in partner log in page
- #		Then Verify that sign in using mobile selected having get otp button should be able mouse hover in partner log in page
- #		
- #	@Smoke
-  #Scenario: Validate that working of an email userfield from partner log in page
-    #Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		#Valid
- #		When user enter the credential into the email user field "kd@iffort.co.uk" and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "info@iffort.ifff.com" and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "ashish-upadhyay@iffort.com" and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "ashish+upadhyay@iffort.com" and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field 255 char and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field 200 char and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field 100 char and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field 50 char and click on the get otp button
- #		Then Verify that user should get the green tick in the email user field from the partner log in page
- #		
- #		#Invalid
- #		When user enter the credential into the email user field "123456" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg@" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg.co.in" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg@co.123" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg@co" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg@@@co" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "@example.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcsdf@.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcsd f@co.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "kis.de😀@gmial.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "Kabc.f@co.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "  abcdefg@co.in  " and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "abcdefg@co.in         " and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "          abcdefg@co.in" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "hello@example.みんな" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "!#$%$#e@example.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "!#$%$#e@&^%$.com" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field "!#$%$#e@^%$#.&%^" and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		When user enter the credential into the email user field 255 plus char and click on the get otp button
- #		Then Verify that user should get the red tick in the email user field from the partner log in page
- #		
- #		
- #		
- #		
- #		
- #	 	@Smoke
-  #Scenario: Validate that working of an mobile number userfield from partner log in page
-    #Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		#Valid
- #		When user enter the mobile number into the mobile number user field "1234567890" and click on the get otp button
- #		Then Verify that user should get the green tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "9876543210" and click on the get otp button
- #		Then Verify that user should get the green tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "666666333" and click on the get otp button
- #		Then Verify that user should get the green tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "15551234567" and click on the get otp button
- #		Then Verify that user should get the green tick in the mobile number user field from the partner log in page
- #		
- #		
- #		#Invalid
- #		When user enter the mobile number into the mobile number user field " " and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "012345678901234" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "abcdefghij" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123456789@" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field " 9876543210  " and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "   9876543210" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "9876543210       " and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "$%#$%#" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123$%#!@$45" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123***45" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123,,.sd45" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		When user enter the mobile number into the mobile number user field "123sakod45" and click on the get otp button
- #		Then Verify that user should get the red tick in the mobile number user field from the partner log in page
- #		
- #		
- #		
- #	@Smoke
-  #Scenario: Validate that registered user should get the mail user should not be able to log in with inactive status from register as partner page
-    #Given Verify that user is on the partner registration page from landing page as expected page title "Shield"
-#		When user enter first name into the user field as "partner" into the partner registration page
-#		When user enter last name into the user field as "tester" into the partner registration page
-#		When user enter email into the user field as "partner.tester11@mail.com" into the partner registration page
-#		When user enter mobile number into the user field as "758689600" into the partner registration page
-#		When user enter password into the user field as "Admin@123" into the partner registration page
-#		When user enter confirm password into the user field as "Admin@123" into the partner registration page
-#		When user click the register button from partner registration page
-#		Then Verify that user is on the partner log in page
-#		#Mailtrap active user
-#		Then user should get the partner created successfully and a verification mail has been sent to you pop up to the user in partner log in page
-#		When user navigate to the mailtrap inbox with valid credentials
-#		Then Verify that user should get the mail for verfication of your email address
-#		Then Verify that Verify email address link should open in new tab as expected email verify successfully pop up should be displayed in partner log in page
-#		Then Verify that user is on the partner log in page as expected sign in button should be displayed from partner log in page
-#		
-    #
-#		
-#		
-#		
- #		
- #		
- #		
- #	@Smoke
-  #Scenario: Validate that user should not navigated to the otp page with inactive status of the user from partner log in page
- #		Given Verify that user is on the partner registration page from landing page as expected page title "Shield"
-#		When user enter first name into the user field as "partner" into the partner registration page
-#		When user enter last name into the user field as "tester" into the partner registration page
-#		When user enter email into the user field as "partner.tester03@mail.com" into the partner registration page
-#		When user enter mobile number into the user field as "758689652" into the partner registration page
-#		When user enter password into the user field as "Admin@123" into the partner registration page
-#		When user enter confirm password into the user field as "Admin@123" into the partner registration page
-#		When user click the register button from partner registration page
-#		Then Verify that user is on the partner log in page
- #		When user enter the credential into the email user field "partner.tester03@mail.com" and click on the get otp button
- #		Then Verify that user is on the same page due to inactive status of the user from the partner log in page
- #		
- #		
- #		
- #		
- #		
- #	@Smoke
-  #Scenario: Validate that elements are presents in the get otp page from partner log in page
-    #Given Verify that user is on the partner registration page from landing page as expected page title "Shield"
-#		When user enter first name into the user field as "partner" into the partner registration page
-#		When user enter last name into the user field as "tester" into the partner registration page
-#		When user enter email into the user field as "partner.tester03@mail.com" into the partner registration page
-#		When user enter mobile number into the user field as "758689652" into the partner registration page
-#		When user enter password into the user field as "Admin@123" into the partner registration page
-#		When user enter confirm password into the user field as "Admin@123" into the partner registration page
-#		When user click the register button from partner registration page
-#		Then Verify that user is on the partner log in page
-#		#User is active via belows steps
-  #  Given Verify that admin is on the users all users page as expected page title "Shield" 
-#	#  Then Verify that search button is able to search the user with "partner.tester03@mail.com" name of user in all users page
-#		Then Verify that user should be able change the status of the user in all user page
-#		#Sign out administrator
-#	#	Then Verify than user is able to sign out button from the administrator profile dropdown page
-    #Partner log in
- #		Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		When user enter the credential into the email user field "partner.tester03@mail.com" and click on the get otp button
- #		
- #		When again click due to un authentication pop up
- #		
- #		Then Verify that sign in into your account title text is displayed from partner log in otp page
- #		Then Verify that sign in into manage your business text should be displayed from the partner log in otp page
- #		Then Verify that please enter six digit otp sent to your email mobile text above user field is displayed in partner log in otp page
- #		Then Verify that left side shield title text should be displayed in partner log in otp page
- #		Then Verfiy that left side shield logo should be displayed in partner log in otp page
- #		Then Verify that left side sign in into your account text is displayed in partner log in otp page
- #		Then Verify that left side sign in into manage your business text is displayed in partner log in otp page
- #		Then Verify that otp user fields counts should be 6 in partner log in otp page
- #		Then Verify that user field placeholder value should be "●" in partner log in otp page
- #		Then Verify that otp user fields should be clickable in partner log in otp page
- #		Then Verify that verify otp button should be displayed in partner log in otp page
- #		Then Verify that verify otp button should be clickable in partner log in otp page
- #		Then Verify that verify otp button should be able to mouse hover in log in otp page
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #	@Smoke
-  #Scenario: Validate that working of an otp userfield in the get otp page from partner dashboard page
-    #Given Verify that user is on the partner registration page from landing page as expected page title "Shield"
-#		When user enter first name into the user field as "partnerone" into the partner registration page
-#		When user enter last name into the user field as "testeruser" into the partner registration page
-#		When user enter email into the user field as "partner.tester04@mail.com" into the partner registration page
-#		When user enter mobile number into the user field as "750689652" into the partner registration page
-#		When user enter password into the user field as "Admin@123" into the partner registration page
-#		When user enter confirm password into the user field as "Admin@123" into the partner registration page
-#		When user click the register button from partner registration page
-#		Then Verify that user is on the partner log in page
-#		#User is active via belows steps
-    #Given Verify that administrator user is on the users all users page as expected page title "Shield" 
-#	  Then Verify that search button is able to search the user with "partner.tester04@mail.com" name of user in all users page
-#		Then Verify that user should be able change the status of the user in all user page
-#		#Sign out administrator
-#		Then Verify than user is able to sign out button from the administrator profile dropdown page
-    #Partner log in
- #		Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		When user enter the credential into the email user field "partner.tester04@mail.com" and click on the get otp button
- #		When user navigate to new tab mailtrap inbox with valid credentials
- #		Then Copy the otp from the mail box and paste it into the otp user field from the partner log otp in page as expected title "Shield"
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #				
- #	@Smoke
-  #Scenario: Validate that working of an invalid otp userfield in the get otp page from partner dashboard page
-    #Given Verify that user is on the partner registration page from landing page as expected page title "Shield"
-#		When user enter first name into the user field as "partner" into the partner registration page
-#		When user enter last name into the user field as "tester" into the partner registration page
-#		When user enter email into the user field as "partner.tester03@mail.com" into the partner registration page
-#		When user enter mobile number into the user field as "758689652" into the partner registration page
-#		When user enter password into the user field as "Admin@123" into the partner registration page
-#		When user enter confirm password into the user field as "Admin@123" into the partner registration page
-#		When user click the register button from partner registration page
-#		Then Verify that user is on the partner log in page
-#		#User is active via belows steps
-    #Given Verify that administrator user is on the users all users page as expected page title "Shield" 
-#	  Then Verify that search button is able to search the user with "partner.tester03@mail.com" name of user in all users page
-#		Then Verify that user should be able change the status of the user in all user page
-#		#Sign out administrator
-#		Then Verify than user is able to sign out button from the administrator profile dropdown page
-    #Partner log in
- #		Given Verify that user is on the partner log in page as expected page title is "Shield"
- #		When user enter the credential into the email user field "partner.tester03@mail.com" and click on the get otp button
- #		Then Copy the wrong otp "968596" from the mail box and paste it into the otp user field from the partner log otp in page as expected title "Shield"
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #		
- #		
+@Partner_admin_log_in_page
+Feature: Validate partner admin log in page functionality
+
+  @Smoke
+  Scenario: Validate that elements are present in partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    Then Verify that title text Signin to Your Account is displayed in partner admin log in page
+    Then verify that subtitle Signin to manage, your bussiness is displayed in partner admin log in page
+    Then Verify that email field title Email is displayed in partner admin log in page
+    Then Verify that email place holder value should be "Enter your email address" in partner admin log in page
+    Then Verify that email user field be clickable in partner admin log in page
+    Then Verify that password field title Password should displayed in partner admin log in page
+    Then Verify that password placeholder value should be "Enter your password" in partner admin log in page
+    Then Verify that password user field be clickable in partner admin log in page
+    Then Verify that sign in button should be displayed in partner admin log in page
+    Then Verify that sign in button should be clickable in partner admin log in page
+    Then Verify that forget password link should be displayed in partner admin log in page
+    Then Verify that forget password link should be clickable in partner admin log in page
+    Then Verify that dont have an account text should be displayed in partner admin log in page
+    Then Verify that register here link should be displayed in the partner admin log in page
+    Then Verify that register here link should be clickable in the partner admin log in page
+    Then Verify that logo of shield should be displayed in partner admin log in page
+    Then Verify that title text sign in to your account is displayed in partner admin log in page
+    Then Verify that subtitle Signin to Your Account should be displayed in partner admin log in page
+
+  @Smoke
+  Scenario: Validate that email user field in partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When partner admin user enter only valid email and try to sign in into app "ashish.upadhyay@iffort.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only valid email and try to sign in into application "kd@iffort.co.uk" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only valid email and try to sign in into application "info@iffort.ifff.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only valid email and try to sign in into application "ashish-upadhyay@iffort.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only valid email and try to sign in into application "ashish+upadhyay@iffort.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only invalid space email and try to sign in into aplication "  abcdefg@co.in  " in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only invalid space email and try to sign in into aplication "abcdefg@co.in         " in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only invalid space email and try to sign in into aplication "          abcdefg@co.in" in partner admin log in page
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter 190 characters into the email user field and try to sign in into the application
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter 100 characters into the email user field and try to sign in into the application
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter 50 characters into the email user field and try to sign in into the application
+    Then Verify that partner admin user should get the expected green tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg@" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg.co.in" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg@co.123" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg@co" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcdefg@@@co" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "@example.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcsdf@.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "abcsd f@co.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "Ka+-bc.f@cocom" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "!#$%$#e@example.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "!#$%$#e@&^%$.com" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter only invalid email and try to sign in into aplication "!#$%$#e@^%$#.&%^" in partner admin log in page
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+
+  @Smoke
+  Scenario: Validate password user field in partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When partner admin user enter only valid password and try to sign in into appli "Admin@123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "aDmin@123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "aDmin-@123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "@aDmin-123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "1@aDmin-123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "**aDmin-123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "**aDmin$123" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "**amiN$/*98" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "**a::iN$/*98" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "AD@@%%^^&&in@@112233" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "Av$1234567" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "AD@@%%^^&&in@@112233" in partner admin log in page
+    Then verify that partner admin user should get the expected green tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "partner admin @123" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "     " in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "abcd" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only valid password and try to sign in into app "ABCD" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "1234567890" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "qwertyuiop" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "$%^&$%$%#^^$$" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "@#$%^&*" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "ASDFGFDSAS" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "123456qwere" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "#$$%ASDSAS" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "asdfghQWERRT" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "12345@#$%^%$" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "123" in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter only invalid value into the password user field "               " in partner admin log in page
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+
+  @Smoke
+  Scenario: Validate that sign in button functionality in partner admin user log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    #Invalid email and invalid password
+    When partner admin user enter invalid email "abcdefghijk" and invalid password "123" into the userfields and click on sign in into appli
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "123456789" and invalid password "123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "QWERTYUNHJ" and invalid password "123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "!@#$%%^" and invalid password "123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    #Invalid email and valid password
+    When partner admin user enter invalid email "abcdefg@" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcdefg.co.in" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcdefg@co.123" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcdefg@co" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcdefg@@@co" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "@example.com" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcsdf@.com" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "abcsd f@co.com" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    #both valid but not exists!
+    When partner admin user enter invalid email "admin.d@co.in" and valid password "Admin@123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "admin.d@co.in" and valid password "Pdmin@+123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    When partner admin user enter invalid email "adadmin.dc@co.in" and valid password "Pdmin@+123" into the userfields and click on sign in into applicaion
+    Then Verify that partner admin user should get the expected red tick in email user field in partner admin log in page
+    #valid email invalid password
+    #When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "dmin@P123" into the userfields and click on sign in into applicaion
+    #Then Verify that partner admin user should get the expected note contaiing invalid credentials is displayed
+    #When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "Qmin$$$12345" into the userfields and click on sign in into applicaion
+    #Then Verify that partner admin user should get the expected note contaiing invalid credentials is displayed
+    #When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "**a::iN$/*98" into the userfields and click on sign in into applicaion
+    #Then Verify that partner admin user should get the expected note contaiing invalid credentials is displayed
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "abcd" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "ABCD" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "ASDFGFDSAS" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "1234567890" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "qwertyuiop" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "$%^&$%$%#^^$$" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "@#$%^&*" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "ASDFGFDSAS" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "123456qwere" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "#$$%ASDSAS" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "asdfghQWERRT" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "12345@#$%^%$" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "123" into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+    When partner admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "               " into the userfields and click on sign in into applicaion
+    Then verify that partner admin user should get the expected red tick in password user field in partner admin log in page
+
+  @Positive
+  Scenario: Validate that partner admin log in user should be able to log in into the application with valid credentials
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When Verify that after partner admin enter the valid partner admin credentials into the email user field in partner admin log in page
+    When Verify that after partner admin enter the valid partner admin credentials into the password user field in partner admin log in page
+    Then Verify that after entering the valid partner admin credentials into the email and password user is able to click on the sign in button
+    Then Verify that user is log in partner admin successfully with the expected page tilte "Shield - Partner Dashboard"
+
+  @Smoked
+  Scenario: Validate that super admin should not be able to log in into the application with valid credentials through the partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When super admin enter valid email and valid password into the userfields and click on sign in into applicaion for partner admin log in page
+    Then verify that user should get the expected you are not allowed to access partner admin area in partner admin log in page
+
+  @Smoke
+  Scenario: Validate that admin should not be able to log in into the application with valid credentials through the partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When admin enter valid email and valid password into the userfields and click on sign in into applicaion for partner admin log in page
+    Then verify that user should get the expected you are not allowed to access partner admin area in partner admin log in page
+
+  @Smoke
+  Scenario: Validate that executive should not be able to log in into the application with valid credentials through the partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    When executive enter valid email and valid password into the userfields and click on sign in into applicaion for partner admin log in page
+    Then verify that user should get the expected you are not allowed to access partner admin area in partner admin log in page
+
+  @Smoke
+  Scenario: Validate register here link in the partner admin log in page
+  	Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    Then Verify that if partner admin click on the register here link should be on the partner register here page
+  
+  @Smoke
+  Scenario: Validate that password eye button in partner admin log in page
+    Given Verify that user is on the partner admin log in page as expected page title is "Shield - Partner Sign-In"
+    Then Verify that partner admin user get the eye button in the password userfield in partner admin log in page

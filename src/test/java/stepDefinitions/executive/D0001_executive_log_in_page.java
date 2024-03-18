@@ -37,10 +37,22 @@ public class D0001_executive_log_in_page {
 	 * 
 	 */
 	
+	@Given("Verify that user is on the log in as executive page as expected page title {string}")
+	public void verify_that_user_is_on_the_log_in_as_executive_page_as_expected_page_title(String titles) {
+		DriverFactory.getDriver().get(AppHooks.prop.getProperty("url"));
+		lp.user_log_in_to_super_admin_page();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, titles);
+		String title = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
+		Assert.assertEquals(title, titles);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
 	@Given("Verify that user is on the executive log in page as expected page title is {string}")
 	public void verify_that_user_is_on_the_executive_log_in_page_as_expected_page_title_is(String titles) {
 		DriverFactory.getDriver().get(AppHooks.prop.getProperty("url"));
 		lp.user_log_in_to_super_admin_page();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, titles);
 		String title = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(title, titles);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -100,15 +112,6 @@ public class D0001_executive_log_in_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-	@Given("Verify that user is on the log in as executive page as expected page title {string}")
-	public void verify_that_user_is_on_the_log_in_as_executive_page_as_expected_page_title(String titles) {
-		DriverFactory.getDriver().get(AppHooks.prop.getProperty("url"));
-		lp.user_log_in_to_super_admin_page();
-		String title = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
-		Assert.assertEquals(title, titles);
-		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
 
 	@Then("Verify that title text Signin to Your Account is displayed in executive log in page")
 	public void verify_that_executive_log_in_page_have_title_text_signin_to_your_account_is_displayed() {
@@ -462,15 +465,39 @@ public class D0001_executive_log_in_page {
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-
-	@When("partner executive enter valid email and valid password into the userfields and click on sign in into applicaion for executive log in page")
-	public void partner_user_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
+	
+	@When("partner admin enter valid email and valid password into the userfields and click on sign in into applicaion for executive log in page")
+	public void partner_admin_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
 		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Partner_Admin_email"));
 		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Partner_Admin_password"));
 		String value1 = salogin.administrator_entered_password_text();
 		String value2= salogin.administrator_entered_email_text();
 		Assert.assertEquals(value2, AppHooks.prop.getProperty("Partner_Admin_email"));
 		Assert.assertEquals(value1, AppHooks.prop.getProperty("Partner_Admin_password"));
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+
+	@When("partner executive enter valid email and valid password into the userfields and click on sign in into applicaion for executive log in page")
+	public void partner_user_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
+		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Partner_executive_email"));
+		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Partner_executive_password"));
+		String value1 = salogin.administrator_entered_password_text();
+		String value2= salogin.administrator_entered_email_text();
+		Assert.assertEquals(value2, AppHooks.prop.getProperty("Partner_executive_email"));
+		Assert.assertEquals(value1, AppHooks.prop.getProperty("Partner_executive_password"));
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@When("partner technician enter valid email and valid password into the userfields and click on sign in into applicaion for executive log in page")
+	public void partner_technician_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
+		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Technician_email"));
+		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Technician_password"));
+		String value1 = salogin.administrator_entered_password_text();
+		String value2= salogin.administrator_entered_email_text();
+		Assert.assertEquals(value2, AppHooks.prop.getProperty("Technician_email"));
+		Assert.assertEquals(value1, AppHooks.prop.getProperty("Technician_password"));
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}

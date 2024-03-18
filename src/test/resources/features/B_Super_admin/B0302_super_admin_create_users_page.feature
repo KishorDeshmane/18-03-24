@@ -1,7 +1,7 @@
 @Super_admin_create_user_page
 Feature: Validate super admin all users create users page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements is present with super admin all users create users page
     Given Verify that user is on the super_admin dashboard users all users create user page as expected page title "Shield - Users - Create"
     Then Verify that create users page header text should be displayed in the super admin all users create users page

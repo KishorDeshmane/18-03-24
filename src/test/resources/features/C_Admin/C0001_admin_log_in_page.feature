@@ -1,9 +1,9 @@
 @Admin_log_in_page
 Feature: Validate admin log in page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in admin log in page
-    Given Verify that user is on the log in as admin page as expected page title "Shield"
+  	Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     Then Verify that title text Signin to Your Account is displayed in admin log in page
     Then verify that subtitle Signin to manage, your bussiness is displayed in admin log in page
     Then Verify that email field title Email is displayed in admin log in page
@@ -22,7 +22,7 @@ Feature: Validate admin log in page functionality
 
   @Smoke
   Scenario: Validate that email user field in admin log in page
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     When admin user enter only valid email and try to sign in into app "ashish.upadhyay@iffort.com" in admin log in page
     Then Verify that admin user should get the expected green tick in email user field in admin log in page
     When admin user enter only valid email and try to sign in into application "kd@iffort.co.uk" in admin log in page
@@ -63,7 +63,7 @@ Feature: Validate admin log in page functionality
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
     When admin user enter only invalid email and try to sign in into aplication "abcsd f@co.com" in admin log in page
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
-    When admin user enter only invalid email and try to sign in into aplication "Kabc.f@co.com" in admin log in page
+    When admin user enter only invalid email and try to sign in into aplication "Ka+-bc.f@cocom" in admin log in page
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
     When admin user enter only invalid email and try to sign in into aplication "!#$%$#e@example.com" in admin log in page
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
@@ -73,9 +73,9 @@ Feature: Validate admin log in page functionality
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
 
 
-  @Regression
+  @Smoke
   Scenario: Validate password user field in admin log in page
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     When admin user enter only valid password and try to sign in into appli "Admin@123" in admin log in page
     Then verify that admin user should get the expected green tick in password user field in admin log in page
     When admin user enter only valid password and try to sign in into app "aDmin@123" in admin log in page
@@ -131,9 +131,9 @@ Feature: Validate admin log in page functionality
     When admin user enter only invalid value into the password user field "               " in admin log in page
     Then verify that admin user should get the expected red tick in password user field in admin log in page
 
-  @Smokeds
+  @Smoke
   Scenario: Validate that sign in button functionality in admin user log in page
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     #Invalid email and invalid password
     When admin user enter invalid email "abcdefghijk" and invalid password "123" into the userfields and click on sign in into appli
     Then Verify that admin user should get the expected red tick in email user field in admin log in page
@@ -203,35 +203,33 @@ Feature: Validate admin log in page functionality
     When admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "               " into the userfields and click on sign in into applicaion
     Then verify that admin user should get the expected red tick in password user field in admin log in page
 
-  @Regression
+  @Positive
   Scenario: Validate that admin log in user should be able to log in into the application with valid credentials
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     When Verify that after admin enter the valid admin credentials into the email user field in admin log in page
     When Verify that after admin enter the valid admin credentials into the password user field in admin log in page
     Then Verify that after entering the valid admin credentials into the email and password user is able to click on the sign in button
-    Then Verify that user is log in admin successfully with the expected page tilte "Shield"
+    Then Verify that user is log in admin successfully with the expected page tilte "Shield - Dashboard"
 
-  @Regression
+  @Smoke
   Scenario: Validate that partner admin should not be able to log in into the application with valid credentials through the admin log in page
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     When partner admin enter valid email and valid password into the userfields and click on sign in into applicaion for admin log in page
     Then verify that user should get the expected you are not allowed to access admin area in admin log in page
 
-  #@Regression
-  #Scenario: Validate that email user field cross options work as expected in admin log in page
-    #Given Verify that user is on the admin log in page as expected page title is "Shield"
-    #Then Verify that user is on the super_admin log in page and check email user field is empty
-    #When admin user enter only valid email and try to sign in into app "XYZ" in admin log in page
-    #Then Verify that admin user should get the expected red tick in email user field in admin log in page
-#
-  #@Regression
-  #Scenario: Validate that password user field cross options work as expected in admin log in page
-    #Given Verify that user is on the admin log in page as expected page title is "Shield"
-    #Then Verify that user is on the admin log in page and check password user field is empty in admin log in page
-    #When admin user enter only valid password and try to sign in into app "XY11111Z" in admin log in page
-    #Then verify that admin user should get the expected red tick in password user field in admin log in page
+  @Smoke
+  Scenario: Validate that partner executive should not be able to log in into the application with valid credentials through the admin log in page
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
+    When partner executive enter valid email and valid password into the userfields and click on sign in into applicaion for admin log in page
+    Then verify that user should get the expected you are not allowed to access admin area in admin log in page
 
-  @Regression
+  @Smoke
+  Scenario: Validate that partner technician should not be able to log in into the application with valid credentials through the admin log in page
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
+    When partner technician enter valid email and valid password into the userfields and click on sign in into applicaion for admin log in page
+    Then verify that user should get the expected you are not allowed to access admin area in admin log in page
+
+  @Smoke
   Scenario: Validate that password eye button in admin log in page
-    Given Verify that user is on the admin log in page as expected page title is "Shield"
+    Given Verify that user is on the admin log in page as expected page title is "Shield - Sign-In"
     Then Verify that admin user get the eye button in the password userfield in admin log in page

@@ -1,7 +1,7 @@
 @Admin_forget_password_page
 Feature: Validate admin forget password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in admin forget password page
     Given Verify that admin into the forget password page as expected title "Shield - Forgot Password"
     Then Verify that forget password title text should be displayed into the admin forget password page

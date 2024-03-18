@@ -11,10 +11,10 @@ import io.cucumber.testng.CucumberOptions;
 //		features = "src/test/resources/features/D_Admin",
 //		features = "src/test/resources/features/G_Partner",
 		
-		
-		tags="@Super_admin_notification_page",
+//		tags="@Positive",
+		tags="@Smoked",
 //		tags="@Super_admin_my_profile_change_password_page or @Super_admin_profile_change_password_page",
-
+		
 		
 		glue = {"stepDefinitions","com/applicationHooks"},
 		monochrome=true,

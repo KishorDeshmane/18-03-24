@@ -1,7 +1,7 @@
 @Admin_service_category_management_update_page
 Feature: Validate admin service category management update page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elemets is present with admin service category management edit page
     Given Verify that admin user is on lookups service category management edit page as expected page title is "Shield"
     Then Verify that update service category title text should be displayed in admin service category management edit page

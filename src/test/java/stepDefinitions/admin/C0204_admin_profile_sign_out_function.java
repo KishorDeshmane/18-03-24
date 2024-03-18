@@ -48,7 +48,7 @@ public class C0204_admin_profile_sign_out_function {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

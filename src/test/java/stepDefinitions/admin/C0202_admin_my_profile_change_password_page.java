@@ -54,8 +54,11 @@ public class C0202_admin_my_profile_change_password_page {
 		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Admin_password"));
 		salogin.administrator_sign_in_button_is_clicked();
 		samain.user_dashboard_first_profile_dropdown_button_is_clicked();
-		samain.user_dashboard_profile_dropdown_change_password_is_clicked();
+				
+		samain.user_dashboard_profile_dropdown_my_profile_is_clicked();
 		smp.user_my_profile_change_passoword_button_clicked();
+
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

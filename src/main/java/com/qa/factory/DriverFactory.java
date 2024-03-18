@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class DriverFactory {
@@ -46,7 +46,7 @@ public class DriverFactory {
 //			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Kishor\\Downloads\\chromedriver-win64\\chromedriver.exe");
 //			 ChromeOptions options = new ChromeOptions();
 //			 options.setBinary("C:\\Users\\Kishor\\Downloads\\chrome-win64\\chrome.exe");
-			WebDriverManager.chromedriver().setup(); 
+//			WebDriverManager.chromedriver().setup(); 
 			tlDriver.set(new ChromeDriver());
 	
 		} else if (browser.equals("edge")) {

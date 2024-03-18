@@ -88,11 +88,8 @@ public class Partner_registration_page_objects {
 	@FindBy(xpath = "//*[@name='password_confirmation']")
 	private WebElement register_as_partner_comfirm_password_user_field;
 
-	@FindBy(xpath= "//*[@type='submit']")
+	@FindBy(xpath= "//*[text()='Register']")
 	private WebElement register_as_partner_register_button;
-
-	@FindBy(xpath= "(//*[text()='Shield'])[2]")
-	private WebElement register_as_partner_left_side_shield_text;
 
 	@FindBy(xpath= "//*[@alt='user']")
 	private WebElement register_as_partner_left_side_shield_logo;
@@ -138,6 +135,12 @@ public class Partner_registration_page_objects {
 
 	@FindBy(xpath="//*[@class='form-control  form-control is-invalid' and @name='password_confirmation']")
 	private WebElement register_as_partner_confirm_password_get_red_tick_in_user_field;
+
+	@FindBy(xpath="(//*[text()='Already have account?'])[1]")
+	private WebElement already_have_an_account_text;
+
+	@FindBy(xpath="(//*[text()='Sign-in'])[1]")
+	private WebElement sign_in_link;
 
 
 	/* 
@@ -325,10 +328,6 @@ public class Partner_registration_page_objects {
 		return true;
 	}
 
-	public boolean user_register_as_partner_left_side_shield_text_is_displayed() {
-		return register_as_partner_left_side_shield_text.isDisplayed();
-	}
-
 	public boolean user_register_as_partner_left_side_shield_logo_is_displayed() {
 		return register_as_partner_left_side_shield_logo.isDisplayed();
 	}
@@ -435,6 +434,22 @@ public class Partner_registration_page_objects {
 
 	public boolean user_register_as_partner_confirm_password_get_red_tick_in_user_field() {
 		return register_as_partner_confirm_password_get_red_tick_in_user_field.isDisplayed();
+	}
+
+	public boolean already_have_an_account_text_is_displayed() {
+		return already_have_an_account_text.isDisplayed();
+	}
+
+	public boolean sign_in_link_should_be_displayed() {
+		return sign_in_link.isDisplayed();
+	}
+
+	public boolean sign_in_link_should_be_clickable() {
+		return sign_in_link.isEnabled();
+	}
+	
+	public void sign_in_link_should_be_clicked() {
+		 sign_in_link.click();
 	}
 
 

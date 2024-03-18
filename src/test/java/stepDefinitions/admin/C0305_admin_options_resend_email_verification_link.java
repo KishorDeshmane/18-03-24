@@ -53,33 +53,22 @@ public class C0305_admin_options_resend_email_verification_link {
 		salogin.administrator_sign_in_button_is_clicked();
 		samain.user_dashboard_users_button_is_clicked();
 		samain.user_dashboard_mouser_users_all_users_is_clicked();
+		saalluser.user_all_users_search_userfield_sendText(AppHooks.tdata.getProperty("search_executive"));
+	    saalluser.user_all_users_search_button_is_click();
+		
+	    saalluser.users_all_users_actions_options_3_dots_is_click();
+	    saalluser.users_all_users_actions_option_change_status_is_click();
+	    sastatus.user_all_user_actions_options_change_status_button_pop_up_switch_button_is_click();
+	    sastatus.user_all_user_actions_options_change_status_button_pop_up_submit_button_is_click();
+	    
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	
-//	@Given("Verify that admin user is on the users all users actions options resend email verification link as expected create user title {string} for resend email verification link")
-//	public void verify_that_admin_user_is_on_the_users_all_users_actions_options_resend_email_verification_link_as_expected_create_user_title(String title) {
-//		DriverFactory.getDriver().get(AppHooks.prop.getProperty("url"));
-//		lp.user_log_in_to_super_admin_page();
-//		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Admin_email"));
-//		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Admin_password"));
-//		salogin.administrator_sign_in_button_is_clicked();
-//		samain.user_dashboard_users_button_is_clicked();
-//		samain.user_dashboard_mouser_users_all_users_is_clicked();
-//		saalluser.user_all_users_create_user_button_is_click();
-//		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
-//		Assert.assertEquals(actual, title);
-//		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-//		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-//	}
-	
 	@Then("Verify that admin search button is able to search the user with name of user in all users page for resend email verification link")
 	public void verify_that_admin_search_button_is_able_to_search_the_user_with_name_of_user_in_all_users_page_for_resend_email_verification_link() {
-	    saalluser.user_all_users_search_userfield_sendText(AppHooks.tdata.getProperty("search_executive"));
-	    saalluser.user_all_users_search_button_is_click();
 	    boolean actual = saalluser.user_all_users_column_list_expected_user_name_is_displayed();
 	    Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

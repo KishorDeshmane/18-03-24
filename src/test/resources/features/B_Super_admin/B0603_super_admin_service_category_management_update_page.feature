@@ -1,7 +1,7 @@
 @Super_admin_service_category_management_update_page
 Feature: Validate super admin service category management update page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elemets is present with super admin service category management edit page
     Given Verify that super admin user is on lookups service category management edit page as expected page title is "Shield - Service Category - Edit"
     Then Verify that update service category title text should be displayed in super admin service category management edit page

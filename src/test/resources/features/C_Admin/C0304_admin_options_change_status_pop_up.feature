@@ -3,7 +3,7 @@ Feature: Validate admin all user action options change status functionality
 
   @Smoke
   Scenario: Validate that elemetnts are presents with admin change status all users action options pop up
-    Given Verify that admin user is on the users all users actions options change status page as expected page title "Shield"
+    Given Verify that admin user is on the users all users actions options change status page as expected page title "Shield - Users"
     When user click on the change status button from the admin change status all users action options pop up
     Then Verify that the pop up should be displayed in the admin change status all users action options pop up
     Then Verify that the pop up title change status of the user should be displayed in admin change status all users action options pop up

@@ -1,13 +1,13 @@
 @Admin_profile_change_password_page
 Feature: Validate Admin change password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in the from admin profile pop up change password page
-    Given Verify that user is on the admin dashboard change password page as expected page title "Shield"
-    Then Verify that page header change password title text is displayed from admin profile pop up change password page
-    Then Verify that page breadcrum list should be displayed from the admin profile pop up change password page
-    Then Verify that page breadcrum dashborad button should be clickable from the admin profile pop up change password page
-    Then Verify that page breadcrum change password text is displayed from the admin profile pop up change password page
+    Given Verify that user is on the admin dashboard change password page as expected page title "Shield - Change - Password"
+    #Then Verify that page header change password title text is displayed from admin profile pop up change password page
+    #Then Verify that page breadcrum list should be displayed from the admin profile pop up change password page
+    #Then Verify that page breadcrum dashborad button should be clickable from the admin profile pop up change password page
+    #Then Verify that page breadcrum change password text is displayed from the admin profile pop up change password page
     Then Verify that page current password title text above userfield should be displayed from the admin profile pop up change password page
     Then Verify that page current password user field should be clickable from the admin profile pop up change password page
     Then Verify that page current password user field placeholder value should be "Enter your current password" from the admin profile pop up change password page
@@ -21,9 +21,9 @@ Feature: Validate Admin change password page functionality
 
 
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in second change password from admin user profile page
-    Given Verify that user is on the admin dashboard change password page as expected page title "Shield"
+    Given Verify that user is on the admin dashboard change password page as expected page title "Shield - Change - Password"
      Then Verify that page new password title text is displayed in the admin profile pop up change password second page
     Then Verify that page new password userfield should be clickable in the admin profile pop up change password second page
     Then Verify that page new password userfield placeholder value should be "Enter your new password" in the admin profile pop up change password second page

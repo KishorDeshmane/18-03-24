@@ -1,7 +1,7 @@
 @Super_admin_forget_password_page
 Feature: Validate super admin forget password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in super admin forget password page
     Given Verify that super admin into the forget password page as expected title "Shield - Forgot Password"
     Then Verify that forget password title text should be displayed into the super admin forget password page

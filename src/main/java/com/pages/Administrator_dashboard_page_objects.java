@@ -111,8 +111,8 @@ public class Administrator_dashboard_page_objects {
 	 * 
 	 */
 	
-	@FindBy(xpath = "//span[text()='Users']")
-	private WebElement navigational_tab_users;
+	@FindBy(xpath = "//span[text()='User Management']")
+	private WebElement navigational_tab_users_management;
 	
 	@FindBy(xpath = "//*[text()='All Users']")
 	private WebElement navigational_tab_users_all_users;
@@ -542,11 +542,11 @@ public class Administrator_dashboard_page_objects {
 		}
 		
 		try {
-			ElementUtil.eu.wait_for_element_to_be_clickable(driver, 10, navigational_tab_users);
-			ElementUtil.eu.mouseHover(driver, navigational_tab_users);
+			ElementUtil.eu.wait_for_element_to_be_clickable(driver, 10, navigational_tab_users_management);
+			ElementUtil.eu.mouseHover(driver, navigational_tab_users_management);
 		} catch (Exception ea) {
-			ElementUtil.eu.wait_for_element_to_be_clickable(driver, 10, navigational_tab_users);
-			ElementUtil.eu.mouseHover(driver, navigational_tab_users);
+			ElementUtil.eu.wait_for_element_to_be_clickable(driver, 10, navigational_tab_users_management);
+			ElementUtil.eu.mouseHover(driver, navigational_tab_users_management);
 		}
 		return true;
 	}
@@ -593,9 +593,9 @@ public class Administrator_dashboard_page_objects {
 			e1.printStackTrace();
 		}
 		try {
-			navigational_tab_users.click();
+			navigational_tab_users_management.click();
 		} catch (StaleElementReferenceException e) {
-			navigational_tab_users.click();
+			navigational_tab_users_management.click();
 			System.out.println(e.getMessage());
 		}
 	}
@@ -669,9 +669,9 @@ public class Administrator_dashboard_page_objects {
 	
 	public boolean user_dashboard_users_is_clickable(){
 		try {
-			return navigational_tab_users.isEnabled();			
+			return navigational_tab_users_management.isEnabled();			
 		} catch (Exception e) {
-			return navigational_tab_users.isEnabled();
+			return navigational_tab_users_management.isEnabled();
 		}
 	}
 	

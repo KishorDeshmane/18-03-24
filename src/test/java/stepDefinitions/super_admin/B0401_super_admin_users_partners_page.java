@@ -7,7 +7,6 @@ import org.junit.Assert;
 import com.applicationHooks.AppHooks;
 import com.pages.Landing_page_objects;
 import com.pages.Users_all_users_page_objects;
-import com.pages.Users_all_users_update_page_objects;
 import com.pages.Users_partners_page_objects;
 import com.pages.Administrator_dashboard_page_objects;
 import com.pages.Administrator_log_in_page_objects;

@@ -143,6 +143,7 @@ public class A001_landing_page {
 	public void verify_that_register_as_partner_page_should_navigate_to_the_registration_page_as_expected_page_title(String string) {
 		lp.user_register_as_partner_button_is_click();
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, string);
 	    Assert.assertEquals(actual, string);
  		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
  		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());

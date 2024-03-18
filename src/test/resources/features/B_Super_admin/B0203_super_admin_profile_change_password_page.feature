@@ -1,7 +1,7 @@
 @Super_admin_profile_change_password_page
 Feature: Validate super_admin change password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in the from super admin profile pop up change password page
     Given Verify that user is on the super admin dashboard change password page as expected page title "Shield - Change - Password"
     Then Verify that page header change password title text is displayed from super admin profile pop up change password page
@@ -21,7 +21,7 @@ Feature: Validate super_admin change password page functionality
 
 
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in second change password from super admin user profile page
     Given Verify that user is on the super admin dashboard change password page as expected page title "Shield - Change - Password"
      Then Verify that page new password title text is displayed in the super admin profile pop up change password second page

@@ -72,7 +72,6 @@ public class B0306_super_admin_options_change_password_page {
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-
     @Then("Verify that page header change password title text is displayed from super admin all users  options change password page")
     public void verify_that_page_header_change_password_title_text_is_displayed_from_super_admin_dashboard_options_change_password_page() {
     	boolean actual=sapcp.user_change_password_page_header_change_password_title_text_is_displayed();

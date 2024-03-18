@@ -26,12 +26,12 @@ Feature: Validate executive dashboard page functionality
     Then Verify that user should be clickable the copyrights details shield link from the executive dashboard page
     Then Verify that user should be clickable the copyrights details iffort link from the executive dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an main logo from executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     Then Verify that user click on the main logo that should be navigated to the executive dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements from notification dropdown executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     When user is click on the notification dropdown from the executive dashboard page
@@ -40,7 +40,7 @@ Feature: Validate executive dashboard page functionality
     Then Verify that user should get the view all notifications link top from the executive dashboard page
     Then Verify that user should get the view all notifications link is clickable from the executive dashboard page
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements from profile dropdown executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     When user click on the main profile dropdown button from the executive dashboard page
@@ -54,21 +54,21 @@ Feature: Validate executive dashboard page functionality
     Then Verify that user sign out dropdown item should be displayed in the profile dropdown from the executive page
     Then Verify that user sign out dropdown item should be clickable in the profile dropdown from the executive page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an tabs elements from executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     Then Verify that user is mouse hover on the lookups category button from the executive home page
     Then Verify that user is mouse hover on the lookups service areas button from the executive home page
     Then Verify that user is mouse hover on the lookups services button from the executive home page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an tabs elements from executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     Then Verify that user is able to mouse hover on the user all user button from the executive home page
     Then Verify that user is able to mouse hover on the user partners button from the executive home page
     Then Verify that user is able to mouse hover on the user costomers button from the executive home page
 
-  @Regression
+  @Smoke
   Scenario: Validate that working of an footer elements in executive dashboard page
     Given Verify that user is on the executive dashboard page as expected page title "Shield"
     When user is at the footer and click on the shield link from the executive dashboard page

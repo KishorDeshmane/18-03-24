@@ -1,7 +1,7 @@
 @Super_admin_create_service_category_page
 Feature: Validate super admin create service category page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elemets is present with super admin create service category page
     Given Verify that super admin user is on lookups create service category page as expected page title is "Shield - Service Category - Create"
     Then Verify that create service category tilte text of the page should displayed in the super admin create service category page

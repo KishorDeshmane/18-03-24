@@ -1,7 +1,7 @@
 @Executive_my_profile_change_password_page
 Feature: Validate executive my change password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in the executive my profile change password page
     Given Verify that user is on the executive profile change password page as expected page title "Shield"
     Then Verify that page header change password title text is displayed from executive my profile change password page
@@ -18,7 +18,7 @@ Feature: Validate executive my change password page functionality
     Then Verify that page submit button should be able to mouse hover from executive my profile change password page
     Then Verify that page cancel button should be able to mouse hover from executive my profile change password page
     
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in the executive my profile change password second page
     Given Verify that user is on the executive profile change password page as expected page title "Shield"
     Then Verify that page new password title text is displayed in the change password second page from executive my profile change password second page

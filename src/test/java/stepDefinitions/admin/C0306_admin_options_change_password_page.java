@@ -9,6 +9,7 @@ import com.pages.Administrator_dashboard_page_objects;
 import com.pages.Administrator_log_in_page_objects;
 import com.pages.Change_password_page_objects;
 import com.pages.Landing_page_objects;
+import com.pages.Users_all_users_change_status_pop_up_objects;
 import com.pages.Users_all_users_page_objects;
 import com.qa.factory.DriverFactory;
 import com.qa.utility.ElementUtil;
@@ -30,6 +31,7 @@ public class C0306_admin_options_change_password_page {
 	private Administrator_dashboard_page_objects samain = new Administrator_dashboard_page_objects(DriverFactory.getDriver());
 	private Change_password_page_objects sapcp =new Change_password_page_objects(DriverFactory.getDriver());
 	private Users_all_users_page_objects saalluser = new Users_all_users_page_objects(DriverFactory.getDriver());
+	private Users_all_users_change_status_pop_up_objects sst = new Users_all_users_change_status_pop_up_objects(DriverFactory.getDriver());
 	
 	Logger logger = LogManager.getLogger(C0306_admin_options_change_password_page.class);
 	
@@ -61,7 +63,15 @@ public class C0306_admin_options_change_password_page {
 		saalluser.user_all_users_search_userfield_sendText(AppHooks.tdata.getProperty("search_executive"));
 	    saalluser.user_all_users_search_button_is_click();
 	    saalluser.users_all_users_actions_options_3_dots_is_click();
+	    
+//	    inactive admin user temporary
+	    saalluser.users_all_users_actions_option_change_status_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_switch_button_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_submit_button_is_click();
+	    saalluser.users_all_users_actions_options_3_dots_is_click();
+	    
 		saalluser.users_all_users_actions_option_change_password_is_click();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -172,7 +182,23 @@ public class C0306_admin_options_change_password_page {
         Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
+	
+		
+//		#Change status of admin to the active again
+		ElementUtil.eu.navigate_back(DriverFactory.getDriver());
+		saalluser.user_all_users_search_userfield_sendText(AppHooks.tdata.getProperty("search_admin"));
+	    saalluser.user_all_users_search_button_is_click();
+	    saalluser.users_all_users_actions_options_3_dots_is_click();
+	    saalluser.users_all_users_actions_option_change_status_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_switch_button_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_submit_button_is_click();
+	    try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     
     @Then("Verify that page new password title text is displayed in the change password second page from admin all users options change password page")
     public void verify_that_page_new_password_title_text_is_displayed_in_the_change_password_second_page_from_admin_change_password_page() {
@@ -270,7 +296,31 @@ public class C0306_admin_options_change_password_page {
         Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
-	}
+	
+
+//		#Change status of admin to the active again
+		 ElementUtil.eu.navigate_back(DriverFactory.getDriver());
+		 try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		 ElementUtil.eu.navigate_back(DriverFactory.getDriver());
+		saalluser.user_all_users_search_userfield_sendText(AppHooks.tdata.getProperty("search_admin"));
+	    saalluser.user_all_users_search_button_is_click();
+	    saalluser.users_all_users_actions_options_3_dots_is_click();
+	   
+		saalluser.users_all_users_actions_option_change_status_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_switch_button_is_click();
+	    sst.user_all_user_actions_options_change_status_button_pop_up_submit_button_is_click();
+	    try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	
+		
+    }
 	
     
 	

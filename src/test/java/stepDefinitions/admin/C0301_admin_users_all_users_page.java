@@ -46,6 +46,7 @@ public class C0301_admin_users_all_users_page {
 		salogin.administrator_sign_in_button_is_clicked();
 		samain.user_dashboard_users_button_is_clicked();
 		samain.user_dashboard_mouser_users_all_users_is_clicked();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

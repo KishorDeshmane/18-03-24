@@ -1,7 +1,7 @@
 @Super_admin_partners_page
 Feature: Validate super admin partners page functionality
 
-  @Regression
+  @Smoke
   Scenario:  Validate that elements are present with super admin partners users page
   Given Verify that super admin user is on the users partners user page as expected page title "Shield - Users" 
 	Then Verify that super admin user partner header text should be displayed in the super admin partners users page

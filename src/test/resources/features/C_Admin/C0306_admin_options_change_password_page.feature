@@ -4,7 +4,7 @@ Feature: Validate admin all user action options change password functionality
 
   @Smoke
   Scenario: Validate that elements are presents with admin all users action options change password page
-    Given Verify that admin user is on the users all users actions options change password page as expected page title "Shield"
+    Given Verify that admin user is on the users all users actions options change password page as expected page title "Shield - Change - Password"
     Then Verify that page header change password title text is displayed from admin all users  options change password page
     Then Verify that page breadcrum list should be displayed from the admin all users options change password page
     Then Verify that page breadcrum dashborad button should be clickable from the admin all users  options change password page
@@ -21,7 +21,7 @@ Feature: Validate admin all user action options change password functionality
     
   @Smoke
   Scenario: Validate that elements are presents in admin all users action options change password page
-    Given Verify that admin user is on the users all users actions options change password page as expected page title "Shield"
+    Given Verify that admin user is on the users all users actions options change password page as expected page title "Shield - Change - Password"
     Then Verify that page new password title text is displayed in the change password second page from admin all users options change password page
     Then Verify that page new password userfield should be clickable in the change password second page from admin all users options change password page
     Then Verify that page new password userfield placeholder value should be "Enter your new password" in the change password second page from admin all users options change password page

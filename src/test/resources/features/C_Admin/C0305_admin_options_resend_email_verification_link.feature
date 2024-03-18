@@ -4,7 +4,7 @@ Feature: Validate admin all user action options resend email verification functi
 
   @Smoke
   Scenario: Validate that working of an action options resend email verification link button with active super admin user
-    Given Verify that admin user is on the users all users actions options resend email verification link as expected page title "Shield" for resend email verification link
+    Given Verify that admin user is on the users all users actions options resend email verification link as expected page title "Shield - Users" for resend email verification link
     Then Verify that admin search button is able to search the user with name of user in all users page for resend email verification link
     And admin click on the action options and click on resend email verification link button
     #Then admin click on the resend email verification link button sent mail pop up already user is active displayed from the administrstor dashboard all users actions options button

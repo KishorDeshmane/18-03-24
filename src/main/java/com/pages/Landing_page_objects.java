@@ -22,7 +22,7 @@ public class Landing_page_objects {
 	@FindBy(xpath = "(//*[text()='Login as Administrator'])[2]")
 	private WebElement log_in_button_log_in_as_administrator;
 
-	@FindBy(xpath = "//*[text()='Login as Partner']")
+	@FindBy(xpath = "(//*[text()='Login as Partner'])[2]")
 	private WebElement log_in_button_log_in_as_partner;
 	
 	/*

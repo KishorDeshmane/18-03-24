@@ -1,7 +1,7 @@
 @Executive_profile_change_password_page
 Feature: Validate executive change password page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in the from executive profile pop up change password page
     Given Verify that user is on the executive dashboard change password page as expected page title "Shield"
     Then Verify that page header change password title text is displayed from executive profile pop up change password page
@@ -21,7 +21,7 @@ Feature: Validate executive change password page functionality
 
 
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in second change password from executive user profile page
     Given Verify that user is on the executive dashboard change password page as expected page title "Shield"
      Then Verify that page new password title text is displayed in the executive profile pop up change password second page

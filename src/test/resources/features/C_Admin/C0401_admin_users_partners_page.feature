@@ -1,7 +1,7 @@
 @Admin_partners_page
 Feature: Validate admin partners page functionality
 
-  @Regression
+  @Smoke
   Scenario:  Validate that elements are present with admin partners users page
   Given Verify that admin user is on the users partners user page as expected page title "Shield" 
 	Then Verify that admin user partner header text should be displayed in the admin partners users page

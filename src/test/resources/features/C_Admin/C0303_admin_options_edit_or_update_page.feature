@@ -3,7 +3,7 @@ Feature: Validate admin all user action options edit or update user page functio
 
   @Smoke
   Scenario: Validate that elements are presents with admin edit or update action options page
-    Given Verify that admin user is on the users all users actions options edit page as expected page title "Shield"
+    Given Verify that admin user is on the users all users actions options edit page as expected page title "Shield - Users - Edit"
     Then Verify that the user is on the update user page in the admin all users actions update page
     Then Verify that the breadcrum is displayed in the admin all users actions update page
     Then Verify that the breadcrum all users is displayed in the admin all users actions update page

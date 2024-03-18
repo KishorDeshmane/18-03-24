@@ -31,8 +31,7 @@ public class C0201_admin_profile_my_profile_page {
 	
 	Logger logger = LogManager.getLogger(C0201_admin_profile_my_profile_page.class);
 	
-	
-	
+
 	/*
 	 * 
 	 * 
@@ -51,6 +50,7 @@ public class C0201_admin_profile_my_profile_page {
 		salogin.administrator_sign_in_button_is_clicked();
 		samain.user_dashboard_first_profile_dropdown_button_is_clicked();
 		samain.user_dashboard_profile_dropdown_my_profile_is_clicked();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());

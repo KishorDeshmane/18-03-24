@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.qa.utility.ElementUtil;
-
 public class Lookups_service_area_management_create_page_objects {
 	public WebDriver driver;
 

@@ -1,7 +1,7 @@
 @Super_admin_log_in_page
 Feature: Validate super admin log in page functionality
 
-  @Regression
+  @Smoke
   Scenario: Validate that elements are present in super admin log in page
     Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
    Then Verify that title text Signin to Your Account is displayed in super admin log in page
@@ -63,7 +63,7 @@ Feature: Validate super admin log in page functionality
     Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
     When super admin user enter only invalid email and try to sign in into aplication "abcsd f@co.com" in super admin log in page
     Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
-    When super admin user enter only invalid email and try to sign in into aplication "Kabc.f@co.com" in super admin log in page
+    When super admin user enter only invalid email and try to sign in into aplication "K+-abc.f@cocom" in super admin log in page
     Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
     When super admin user enter only invalid email and try to sign in into aplication "!#$%$#e@example.com" in super admin log in page
     Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
@@ -73,7 +73,7 @@ Feature: Validate super admin log in page functionality
     Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
 
 
-  @Regression
+  @Smoke
   Scenario: Validate password user field in super admin log in page
     Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
     When super admin user enter only valid password and try to sign in into appli "Admin@123" in super admin log in page
@@ -203,35 +203,33 @@ Feature: Validate super admin log in page functionality
     When super admin user enter valid email "ashish.upadhyay@iffort.com" and invalid password "               " into the userfields and click on sign in into applicaion
     Then verify that super admin user should get the expected red tick in password user field in super admin log in page
 
-  @Regression
+  @Positive
   Scenario: Validate that super admin log in user should be able to log in into the application with valid credentials
     Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
     When Verify that after super admin enter the valid super admin credentials into the email user field in super admin log in page
     When Verify that after super admin enter the valid super admin credentials into the password user field in super admin log in page
     Then Verify that after entering the valid super admin credentials into the email and password user is able to click on the sign in button
-    Then Verify that user is log in super admin successfully with the expected page tilte "Shield"
+    Then Verify that user is log in super admin successfully with the expected page tilte "Shield - Dashboard"
 
-  @Regression
+  @Smoke
   Scenario: Validate that partner admin should not be able to log in into the application with valid credentials through the super admin log in page
     Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
     When partner admin enter valid email and valid password into the userfields and click on sign in into applicaion for super admin log in page
     Then verify that user should get the expected you are not allowed to access admin area in super admin log in page
 
-  #@Regression
-  #Scenario: Validate that email user field cross options work as expected in super admin log in page
-    #Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
-    #Then Verify that user is on the super_admin log in page and check email user field is empty
-    #When super admin user enter only valid email and try to sign in into app "XYZ" in super admin log in page
-    #Then Verify that super admin user should get the expected red tick in email user field in super admin log in page
-#
-  #@Regression
-  #Scenario: Validate that password user field cross options work as expected in super admin log in page
-    #Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
-    #Then Verify that user is on the super admin log in page and check password user field is empty in super admin log in page
-    #When super admin user enter only valid password and try to sign in into app "XY11111Z" in super admin log in page
-    #Then verify that super admin user should get the expected red tick in password user field in super admin log in page
+  @Smoke
+  Scenario: Validate that partner executive should not be able to log in into the application with valid credentials through the super admin log in page
+    Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
+    When partner executive enter valid email and valid password into the userfields and click on sign in into applicaion for super admin log in page
+    Then verify that user should get the expected you are not allowed to access admin area in super admin log in page
 
-  @Regression
+  @Smoke
+  Scenario: Validate that partner technician should not be able to log in into the application with valid credentials through the super admin log in page
+    Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
+    When partner technician enter valid email and valid password into the userfields and click on sign in into applicaion for super admin log in page
+    Then verify that user should get the expected you are not allowed to access admin area in super admin log in page
+
+  @Smoke
   Scenario: Validate that password eye button in super admin log in page
     Given Verify that user is on the super admin log in page as expected page title is "Shield - Sign-In"
     Then Verify that super admin user get the eye button in the password userfield in super admin log in page

@@ -55,12 +55,12 @@ public class C0203_admin_profile_change_password_page {
 		salogin.administrator_sign_in_button_is_clicked();
 		samain.user_dashboard_first_profile_dropdown_button_is_clicked();
 		samain.user_dashboard_profile_dropdown_change_password_is_clicked();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-    
     
     @Then("Verify that page header change password title text is displayed from admin profile pop up change password page")
     public void verify_that_page_header_change_password_title_text_is_displayed_from_admin_dashboard_change_password_page() {

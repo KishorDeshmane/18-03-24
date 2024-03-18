@@ -3,7 +3,7 @@ Feature: Validate Admin my profile page functionality
 
   @Smoke
   Scenario: Validate that elements are present with admin profie pop up my profile page
-    Given Verify that user is on the admin dashboard my profile page as expected page title "Shield"
+    Given Verify that user is on the admin dashboard my profile page as expected page title "Shield - Profile"
     Then Verify that page header my profile title text is displayed from admin profie pop up my profile page
     Then Verify that page breadcrum list should be displayed from the admin profie pop up my profile page
     Then Verify that page breadcrum dashborad button should be clickable from the admin profie pop up my profile page

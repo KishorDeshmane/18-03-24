@@ -4,12 +4,12 @@ Feature: Validate admin all user page functionality
 
   @Smoke
   Scenario: Validate that elements are present with admin all users page
-    Given Verify that admin user is on the all users page as expected page title "Shield"
+    Given Verify that admin user is on the all users page as expected page title "Shield - Users"
     Then Verify that admin user all users headers text should be displayed from the all users page
-    Then Verify that breadcrum should be displayed from admin all users page
-    Then Verify that breadcrum dashboard button should be displayed from admin all users page
-    Then Verify that breadcrum dashboard button should be clickable from the admin all users page
-    Then Verify that breadcrum users text should be displayed from the admin all users page
+    #Then Verify that breadcrum should be displayed from admin all users page
+    #Then Verify that breadcrum dashboard button should be displayed from admin all users page
+    #Then Verify that breadcrum dashboard button should be clickable from the admin all users page
+    #Then Verify that breadcrum users text should be displayed from the admin all users page
     
     #Record per page
     

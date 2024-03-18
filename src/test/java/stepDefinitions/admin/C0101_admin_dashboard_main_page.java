@@ -38,6 +38,7 @@ public class C0101_admin_dashboard_main_page {
 		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Admin_email"));
 		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Admin_password"));
 		salogin.administrator_sign_in_button_is_clicked();
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
 		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
 		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -230,7 +231,7 @@ public class C0101_admin_dashboard_main_page {
 	public void verify_that_user_click_on_the_main_logo_that_should_be_navigated_to_the_admin_dashboard_page() {
 	    samain.user_dashboard_main_logo_is_clicked();
 	    lp.user_dashboard_button_is_clicked();
-	    boolean actual=samain.user_dashboard_image_in_the_card_box_is_displayed();
+	    boolean actual=samain.user_dashboard_main_logo_is_displayed();
 	    Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -385,12 +386,22 @@ public class C0101_admin_dashboard_main_page {
 	
 	@Then("Verify that user is mouse hover on the lookups services button from the admin home page")
 	public void verify_that_user_is_mouse_hover_on_the_lookups_services_button_from_the_admin_home_page() {
-		samain.user_dashboard_lookups_button_is_clicked();
 		boolean actual = samain.user_dashboard_mouse_hover_on_lookups_services_button();
 	    Assert.assertEquals(actual, true);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
+	
+	@Then("Verify that user is mouse hover on the lookups attributes button from the admin home page")
+	public void verify_that_user_is_mouse_hover_on_the_lookups_attributes_button_from_the_admin_home_page() {
+		boolean actual = samain.user_dashboard_mouse_hover_on_lookups_attributes_button();
+	    Assert.assertEquals(actual, true);
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	
+	
 	
 	@Then("Verify that user is able to mouse hover on the user all user button from the admin home page")
 	public void verify_that_user_is_able_to_mouse_hover_on_the_user_all_user_button_from_the_admin_home_page() {

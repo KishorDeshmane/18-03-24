@@ -7,7 +7,6 @@ import org.testng.Assert;
 import com.applicationHooks.AppHooks;
 import com.pages.Landing_page_objects;
 import com.pages.Administrator_log_in_page_objects;
-import com.pages.Administrator_dashboard_page_objects;
 import com.qa.factory.DriverFactory;
 import com.qa.utility.ElementUtil;
 import io.cucumber.java.en.Given;
@@ -18,7 +17,6 @@ public class B0001_super_admin_log_in_page {
 
 	private Landing_page_objects lp = new Landing_page_objects(DriverFactory.getDriver());
 	private Administrator_log_in_page_objects salogin = new Administrator_log_in_page_objects(DriverFactory.getDriver());
-	private Administrator_dashboard_page_objects samain = new Administrator_dashboard_page_objects(DriverFactory.getDriver());
 	
 	
 	private Logger logger = LogManager.getLogger(B0001_super_admin_log_in_page.class);
@@ -92,9 +90,10 @@ public class B0001_super_admin_log_in_page {
 	}
 
 	@Then("Verify that user is log in super admin successfully with the expected page tilte {string}")
-	public void verify_that_user_is_log_in_super_admin_successfully_with_the_expected_page_tilte(String string) {
-		boolean actual = samain.user_dashboard_main_logo_is_displayed();
-		Assert.assertEquals(actual, true);
+	public void verify_that_user_is_log_in_super_admin_successfully_with_the_expected_page_tilte(String title) {
+		ElementUtil.eu.wait_for_to_be_title_is_displayed(DriverFactory.getDriver(), 10, title);
+		String actual = ElementUtil.eu.current_page_title(DriverFactory.getDriver());
+		Assert.assertEquals(actual, title);
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
@@ -471,6 +470,30 @@ public class B0001_super_admin_log_in_page {
 		String value2= salogin.administrator_entered_email_text();
 		Assert.assertEquals(value2, AppHooks.prop.getProperty("Partner_Admin_email"));
 		Assert.assertEquals(value1, AppHooks.prop.getProperty("Partner_Admin_password"));
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@When("partner executive enter valid email and valid password into the userfields and click on sign in into applicaion for super admin log in page")
+	public void partner_executive_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
+		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Partner_executive_email"));
+		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Partner_executive_password"));
+		String value1 = salogin.administrator_entered_password_text();
+		String value2= salogin.administrator_entered_email_text();
+		Assert.assertEquals(value2, AppHooks.prop.getProperty("Partner_executive_email"));
+		Assert.assertEquals(value1, AppHooks.prop.getProperty("Partner_executive_password"));
+		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@When("partner technician enter valid email and valid password into the userfields and click on sign in into applicaion for super admin log in page")
+	public void partner_technician_enter_valid_email_and_valid_password_into_the_userfields_and_click_on_sign_in_into_applicaion() {
+		salogin.administrator_log_enter_email_into_the_user_field(AppHooks.prop.getProperty("Technician_email"));
+		salogin.administrator_log_enter_password_into_the_user_field(AppHooks.prop.getProperty("Technician_password"));
+		String value1 = salogin.administrator_entered_password_text();
+		String value2= salogin.administrator_entered_email_text();
+		Assert.assertEquals(value2, AppHooks.prop.getProperty("Technician_email"));
+		Assert.assertEquals(value1, AppHooks.prop.getProperty("Technician_password"));
 		logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 		AppHooks.scn.log(Thread.currentThread().getStackTrace()[1].getMethodName());
 	}

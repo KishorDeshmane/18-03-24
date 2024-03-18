@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -42,6 +43,49 @@ public class ElementUtil {
 		 * });
 		 */
 //	}
+	
+	
+
+	public String random_email() {
+	        // Array of common email domains
+	        String[] emailDomains = {"gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "shield.com"};
+	        // Generate a random username
+	        String username = generateRandomString(8); // Change 8 to the desired length of the username
+	        // Select a random domain from the array
+	        Random random = new Random();
+	        String domain = emailDomains[random.nextInt(emailDomains.length)];
+	        // Concatenate the username, "@" symbol, and domain to form the email address
+	        String emailAddress = username + "@" + domain;
+	        // Print the generated email address
+	        System.out.println("Random email address: " + emailAddress);
+			return emailAddress;
+	}
+	
+	    // Method to generate a random string of specified length
+	    public static String generateRandomString(int length) {
+	        String characters = "abcdefghijklmnopqrstuvwxyz0123456789"; // Include characters that can be used in email usernames
+	        StringBuilder sb = new StringBuilder();
+	        Random random = new Random();
+	        for (int i = 0; i < length; i++) {
+	            int index = random.nextInt(characters.length());
+	            sb.append(characters.charAt(index));
+	        }
+	        return sb.toString();
+	    }
+	
+	
+	
+	
+	
+	public String random_nine_digit() {
+		Random random = new Random();
+		StringBuilder mobileNumber = new StringBuilder();
+		for (int i = 0; i < 9; i++) {
+			mobileNumber.append(random.nextInt(10));
+		}
+		System.out.println("Random 9-digit mobile number: " + mobileNumber.toString());
+		return mobileNumber.toString();
+	}
 
 	public void window_scrollBy(WebDriver driver, int x, int y) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
